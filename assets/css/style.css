@@ -1,0 +1,151 @@
+.input-display {
+	display: inline-block;
+  width: 80%;
+}
+
+/*.imperial-height-display{
+  display: inline-block;
+}*/
+
+.label-space {
+	margin-left: 5px;
+}
+
+.table-css {
+
+}
+
+.warning {
+	color: red;
+	font-weight: bold;
+}
+
+
+body {
+  font-size: 20px;
+  color: #333333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+
+.navbar {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.post-preview > a {
+  color: #333333;
+}
+.post-preview > a:hover,
+.post-preview > a:focus {
+  text-decoration: none;
+  color: #0085A1;
+}
+.post-preview > a > .post-title {
+  font-size: 30px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.post-preview > a > .post-subtitle {
+  margin: 0;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.post-preview > .post-meta {
+  color: #777777;
+  font-size: 18px;
+  font-style: italic;
+  margin-top: 0;
+}
+.post-preview > .post-meta > a {
+  text-decoration: none;
+  color: #333333;
+}
+.post-preview > .post-meta > a:hover,
+.post-preview > .post-meta > a:focus {
+  color: #0085A1;
+  text-decoration: underline;
+}
+
+.centered {
+	text-align: center;
+}
+
+.post-header {
+	font-size: 75;
+}
+
+.jumbo {
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+#foodJumbo {
+  background-image: url("../images/food-background.jpg");
+  background-color: #000;
+  color: #FFF;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; 
+}
+
+#foodJumbo h1, #foodJumbo h2, #foodJumbo h3 {
+  opacity: 0.9;
+}
+
+#articlesJumbo {
+  background-image: url("../images/articles-background.jpg");
+  background-color: #000;
+}
+
+#articlesJumbo h1, #articlesJumbo h2, #articlesJumbo h3 {
+  opacity: 0.9;
+  color: #FFF;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; 
+}
+
+#demoJumbo {
+  background-image: url("../images/demo-background.jpg");
+  background-color: #000;
+}
+
+#demoJumbo h1, #demoJumbo h2, #demoJumbo h3{
+  color: #FFF;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; 
+}
+
+#calcJumbo {
+  background-image: url("../images/calc-background.jpg");
+  background-color: #2D3F50;
+}
+
+#calcJumbo h1, #calcJumbo h2, #calcJumbo h3, #calcJumbo p{
+  color: #FFF;
+}
+
+#aboutJumbo {
+  background-image: url("../images/calc-background.jpg");
+  background-color: #2D3F50;
+}
+
+#aboutJumbo h1, #aboutJumbo h2, #aboutJumbo h3, #aboutJumbo p{
+  color: #FFF;
+}
+

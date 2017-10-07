@@ -1,14 +1,157 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chrome <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
-  </body>
-</html>
 
+  <head>
+    <title>TDEE Calculator</title>
+
+    <!-- Insert this line above script imports  -->
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Cosmo Bootstrap Theme -->
+    <link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css">
+
+    <!-- My CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <!-- Firebase -->
+    <script type="text/javascript" src="assets/javascript/firebase.js"></script>
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Validator JS-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+
+    <!-- Custom Fonts -->
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Insert this line after script imports -->
+    <script>if (window.module) module = window.module;</script>
+
+  </head>
+
+  <body>
+
+    <div class = "container-fluid">
+
+    <!-- TDEE Calculator Form -->
+    <div class = "row">
+      <div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class = "panel panel-primary">
+      <div class = "panel-heading">TDEE Calculator</div>
+      <div class = "panel-body row">
+        <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
+  
+          <form data-toggle="validator" role="form">
+          
+          <!--Radio Buttons for format -->
+          <div class="form-group">
+           <label class = "radio-inline"><input type = "radio" id = "imperial" name = "radAnswer" checked= "checked">Imperial (U.S)</label>
+           <label class = "radio-inline"><input type = "radio" id = "metric" name = "radAnswer">Metric</label>
+          </div>
+        
+
+          <!-- Dropdown for user gender -->
+          <div class="form-group">
+          <label class="control-label" for = "user-gender">Gender:</label>
+          <select class = "form-control input-display" id="gender-option">
+              <option id = "user-male">Male</option>
+              <option id = "user-female">Female</option>
+            </select>
+          </div>
+          
+          <!-- Input for user metric height -->
+          <div class="form-group">
+            <label class="control-label" for = "user-height">Height: </label>
+            <input class="form-control input-display" data-error="Please enter a valid height." type = "number" id = "user-heightMetric" min=1 required /><strong><span class="label-space" id="height-lbl"></span></strong>
+            <div class="help-block with-errors "></div>
+          </div>
+
+          <!-- Input for user imperial height -->
+          <div class="form-group">
+            <div id = "feet-imperial" class="imperial-height-display">  
+            <select class="form-control input-display"  id = "feet-heightImperial">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+          </select>
+          <label for = "feet-heightImperial">ft</label>
+        </div>
+          
+          <div id = "inches-imperial" class="imperial-height-display">
+          <select class="form-control input-display" id = "inches-heightImperial">
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+          </select>
+          <label for = "inches-heightImperial">in</label>
+        </div>
+      </div>
+
+          
+          <!-- Input for user weight -->
+          <div class="form-group">
+           <label class="control-label" for = "user-weight">Weight: </label>
+           <input class="form-control input-display" data-error="Please enter a valid weight." type = "number" id = "user-weight" min=1 required /><strong><span class="label-space" id="weight-lbl"></span></strong>
+           <div class="help-block with-errors "></div>
+          </div>
+
+          <!-- Input for user age -->
+          <div class="form-group">
+           <label class="control-label" for = "user-age">Age:   </label>
+           <input class="form-control input-display" data-error="Please enter age 18 or above." type = "number" id = "user-age" min=18 required />
+            <div class="help-block with-errors "></div>
+          </div>
+          
+          <!-- Input for user activity -->
+          <div class="form-group">
+           <label class="control-label" for = "user-activity">Activity/Exercise Level: </label>
+           <select class = "form-control input-display" id="activity-option">
+              <option id = "sedentary">Sedentary (Working Couch Potato)</option>
+              <option id = "lightly_active">Lightly Active (1-2 Days a Week)</option>
+              <option id = "moderately_active">Moderately Active (3-5 Days a Week)</option>
+              <option id = "very_active">Very Active (6-7 Days a Week)</option>
+              <option id = "extremely_active">Extremely Active(2x a Day)</option>
+            </select>
+          </div>
+          
+          <!-- Form submit button -->
+          <input type = "submit" id = "form-submit" value = "Submit" class = "btn btn-primary">
+
+          </form>
+        </div>
+        <div class= "col-lg-6 col-md-6 col-sm-6 col-xs-6" id="tdCalcErrorDiv">
+
+          
+        </div>
+       </div>
+     </div>
+    
+     <!-- User result will appear here -->
+     <div id = "user-result"></div>
+ </div>   
+</div>
+</div>
+  </body>
+
+</html>
