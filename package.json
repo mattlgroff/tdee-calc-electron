@@ -1,14 +1,24 @@
 {
-  "name": "calc-electron",
+  "name": "tdee-calc-electron",
   "version": "1.0.0",
-  "description": "Basic calculator in Electron.",
-  "main": "main.js",
+  "description": "TDEE Calculator in Electron.",
+  "main": "resources/app/main.js",
   "dependencies": {
-    "electron": "^1.7.8"
+    "electron-compile": "^6.4.2",
+    "electron-squirrel-startup": "^1.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "electron-forge": "^4.1.2",
+    "electron-prebuilt-compile": "1.7.8"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "repository": {
     "type": "git",
@@ -19,5 +29,34 @@
   "bugs": {
     "url": "https://github.com/mattlgroff/calc-electron/issues"
   },
-  "homepage": "https://github.com/mattlgroff/calc-electron#readme"
+  "homepage": "https://github.com/mattlgroff/calc-electron#readme",
+  "config": {
+    "forge": {
+      "make_targets": {
+        "win32": [
+          "squirrel"
+        ],
+        "darwin": [
+          "zip"
+        ],
+        "linux": [
+          "deb",
+          "rpm"
+        ]
+      },
+      "electronPackagerConfig": {},
+      "electronWinstallerConfig": {
+        "name": ""
+      },
+      "electronInstallerDebian": {},
+      "electronInstallerRedhat": {},
+      "github_repository": {
+        "owner": "",
+        "name": ""
+      },
+      "windowsStoreConfig": {
+        "packageName": ""
+      }
+    }
+  }
 }
