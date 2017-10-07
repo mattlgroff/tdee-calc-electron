@@ -1,0 +1,23 @@
+{
+  "name": "calc-electron",
+  "version": "1.0.0",
+  "description": "Basic calculator in Electron.",
+  "main": "main.js",
+  "dependencies": {
+    "electron": "^1.7.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattlgroff/calc-electron.git"
+  },
+  "author": "Matt Groff",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mattlgroff/calc-electron/issues"
+  },
+  "homepage": "https://github.com/mattlgroff/calc-electron#readme"
+}
